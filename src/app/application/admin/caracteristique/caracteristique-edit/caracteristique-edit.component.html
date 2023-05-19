@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Multi Columns Form</h5>
+
+      <!-- Multi Columns Form -->
+      <div class="row g-3">
+        <div class="col-md-12">
+          <label for="name" class="form-label">Clean Alternative</label>
+          <input type="text" class="form-control" [(ngModel)]="caracteristique.cleanAlternative" id="cleanAlternative">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">Electric Range</label>
+          <input type="text" class="form-control" [(ngModel)]="caracteristique.electricRange" id="electricRange">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">Electric Utility</label>
+          <input type="text" class="form-control" [(ngModel)]="caracteristique.electricUtility" id="electricUtility">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">Electrique Type</label>
+          <input type="text" class="form-control" [(ngModel)]="caracteristique.electriqueType" id="electriqueType">
+        </div>        
+        <ng-template [ngIf]="caracteristiqueId" [ngIfElse]="notCaracteristique">
+          <div class="text-center" >          
+          <button type="reset" class="btn btn-secondary" (click)="submitData()">Reset</button>
+        </div>
+         </ng-template>
+         <ng-template #notCaracteristique>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" (click)="submitData()">Submit</button>          
+          </div>
+         </ng-template>
+        
+        
+      </div><!-- End Multi Columns Form -->
+
+    </div>
+  </div>
