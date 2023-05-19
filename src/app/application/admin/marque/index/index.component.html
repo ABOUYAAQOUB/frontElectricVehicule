@@ -1,0 +1,53 @@
+<div class="pagetitle">
+    <h1>Liste Marque</h1>    
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink] = "['/carelec/admin/dashboard']">Dashboard</a></li>
+        <li class="breadcrumb-item">Tables</li>
+        <li class="breadcrumb-item"><a [routerLink] = "['/carelec/admin/Marque']">Create</a></li>
+       
+      </ol>
+    </nav>        
+    
+  </div>
+<div class="card">
+    
+    <div class="card-body">
+        <div class="d-flex justify-content-between mt-3">
+            <h5>Marques</h5>
+            <div class="d-flex justify-content-end">
+              <a [routerLink] = "['/carelec/admin/Marque/marque']"><button type="button" class="btn btn-primary">Ajouter</button></a>
+            </div>
+        </div>
+      
+
+      <!-- Table with stripped rows -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Model</th>
+            <th scope="col">Annee Model</th>
+            <th scope="col">Base MSRP</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let marque of marques">
+          
+            <td>{{marque.nom}}</td>
+            <td>{{marque.model}}</td>
+            <td>{{marque.model_annee}}</td>
+            <td>{{marque.base_msrp}}</td>
+            <td>
+               <a [routerLink] = "['/carelec/admin/Marque/marque',marque.id]"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a> &nbsp;
+               <a ><button type="button" (click)="deleteMarque(marque.id)" class="btn btn-danger"><i class="bi bi-trash"></i></button></a> 
+            </td>
+          </tr>  
+                  
+        </tbody>
+      </table>
+      <!-- End Table with stripped rows -->
+
+    </div>
+  </div>
