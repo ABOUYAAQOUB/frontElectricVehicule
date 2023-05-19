@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Multi Columns Form</h5>
+
+      <!-- Multi Columns Form -->
+      <div class="row g-3">
+        <div class="col-md-12">
+          <label for="name" class="form-label">County</label>
+          <input type="text" class="form-control" [(ngModel)]="localite.county" id="county">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">City</label>
+          <input type="text" class="form-control" [(ngModel)]="localite.city" id="name">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">Code Postal</label>
+          <input type="text" class="form-control" [(ngModel)]="localite.codepostal" id="name">
+        </div>
+        <div class="col-md-12">
+          <label for="name" class="form-label">State</label>
+          <input type="text" class="form-control" [(ngModel)]="localite.state" id="name">
+        </div>        
+        <ng-template [ngIf]="localiteId" [ngIfElse]="notLocalite">
+          <div class="text-center" >          
+          <button type="reset" class="btn btn-secondary" (click)="submitData()">Reset</button>
+        </div>
+         </ng-template>
+         <ng-template #notLocalite>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" (click)="submitData()">Submit</button>          
+          </div>
+         </ng-template>
+        
+        
+      </div><!-- End Multi Columns Form -->
+
+    </div>
+  </div>

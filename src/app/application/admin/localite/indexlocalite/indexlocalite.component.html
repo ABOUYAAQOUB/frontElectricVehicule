@@ -1,0 +1,45 @@
+<div class="pagetitle">
+    <h1>Localite Tables</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item">Tables</li>
+      </ol>
+    </nav>
+  </div>
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between mt-3">
+            <h5>Table with stripped rows</h5>
+            <div class="d-flex justify-content-end">
+              <button type="button" [routerLink]="['localite']" class="btn btn-primary">Ajouter</button>
+            </div>
+          </div>
+      <!-- Table with stripped rows -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">state</th>
+            <th scope="col">county</th>
+            <th scope="col">city</th>
+            <th scope="col">codepostal</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let l of localites">
+            <td>{{l.state}}</td>
+            <td>{{l.county}}</td>
+            <td>{{l.city}}</td>
+            <td>{{l.codepostal}}</td>
+            <td>
+                <a [routerLink] ="['localite/'+l.id]" routerLinkActive="router-link-active"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a> &nbsp;
+                <a routerLinkActive="router-link-active" (click)="deleteLocalite(l.id)"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- End Table with stripped rows -->
+
+    </div>
+  </div>
