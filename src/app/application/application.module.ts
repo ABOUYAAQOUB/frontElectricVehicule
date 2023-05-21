@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ApplicationRoutingModule } from './application-routing.module';
 import { SharedModule } from '../_shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SharedModule } from '../_shared/shared.module';
     CommonModule,
     ApplicationRoutingModule,
     SharedModule,
+    FormsModule
     
   ]
 })

@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path:"",
     redirectTo:'/carelec/admin/dashboard',
-    pathMatch:'full'
+    pathMatch:'full',
   },{
     path:"carelec",
     loadChildren:() => import('./application/application.module').then(m=>m.ApplicationModule)

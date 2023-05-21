@@ -1,0 +1,58 @@
+<div class="pagetitle">
+    <h1>Liste Consommations</h1>    
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink] = "['/carelec/admin/dashboard']">Dashboard</a></li>
+        <li class="breadcrumb-item">Tables</li>
+        <li class="breadcrumb-item"><a [routerLink] = "['/carelec/admin/Consommation']">Create</a></li>
+       
+      </ol>
+    </nav>        
+    
+  </div>
+<div class="card">
+    
+    <div class="card-body">
+        <div class="d-flex justify-content-between mt-3">
+            <h5>Consommations</h5>
+            <div class="d-flex justify-content-end">
+              <a [routerLink] = "['/carelec/admin/Consommation/consommation']"><button type="button" class="btn btn-primary">Ajouter</button></a>
+            </div>
+        </div>
+      
+
+      <!-- Table with stripped rows -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Marque</th>
+            <th scope="col">Localite</th>
+            <th scope="col">Date</th>
+            <th scope="col">Caracteristique</th>
+            <th>Base MSRP</th>
+            <th>Electric Range</th>
+            <th>Electric Type</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of consommations">
+          
+            <td>{{item.marque.nom}}</td>
+            <td>{{item.localite.state}}</td>
+            <td>{{item.dateDim.day +"/"+item.dateDim.month+"/"+item.dateDim.year}}</td>
+            <td>{{item.caracteristique.cleanAlternative}}</td>
+            <td>{{item.base_msrp}}</td>
+            <td>{{item.electricRange}}</td>
+            <td>{{item.electriqueType}}</td>
+            <td>
+               <a [routerLink] = "['/carelec/admin/Consommation/consommation',item.id]"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a> &nbsp;
+               <a ><button type="button" (click)="deleteConsommation(item.id)" class="btn btn-danger" ><i class="bi bi-trash"></i></button></a> 
+            </td>
+          </tr>  
+                  
+        </tbody>
+      </table>
+      <!-- End Table with stripped rows -->
+
+    </div>
+  </div>

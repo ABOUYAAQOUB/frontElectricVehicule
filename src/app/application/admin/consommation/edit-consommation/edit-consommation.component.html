@@ -1,0 +1,67 @@
+<div class="pagetitle">
+    <h1>Edit Consommation</h1>    
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink] = "['/carelec/admin/dashboard']">Dashboard</a></li>
+        <li class="breadcrumb-item">Tables</li>
+      </ol>
+    </nav>        
+    
+  </div>
+
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Consommation</h5>
+    <form  [formGroup]="registerform">
+      <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="marque">Marques</label>
+            <div class="col-sm-10">
+            <select  class="form-select" aria-label="Default select example" formControlName="marque" name="marque" id="marque" >
+                <option selected >select Marque</option>
+                <option *ngFor="let item of marques" value="{{item.id}}">{{item.nom}}</option>                
+            </select>
+            </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="localite">Localites</label>
+        <div class="col-sm-10">
+        <select  class="form-select" aria-label="Default select example" formControlName="localite" name="localite" id="localite">
+            <option selected>select Localite</option>
+            <option *ngFor="let item of localites" value="{{item.id}}">{{item.state}}</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="caracteristique">Caracteristiques</label>
+        <div class="col-sm-10">
+        <select  class="form-select" aria-label="Default select example" formControlName="caracteristique" name="caracteristique" id="caracteristique">
+            <option selected>select Caracteristique</option>
+            <option *ngFor="let item of caracteristiques" value="{{item.id}}">{{item.cleanAlternative}}</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="date">Dates</label>
+        <div class="col-sm-10">
+        <select  class="form-select" aria-label="Default select example" formControlName="date" name="date" id="date">
+            <option selected>select Date</option>
+            <option *ngFor="let item of dateDims" value="{{item.id}}">{{item.day+"/"+item.month+"/"+item.year}}</option>
+        </select>
+        </div>
+  </div>
+
+    <div class="col-sm-10">
+        <button type="submit" (click)="addConsommation()"  class="btn btn-primary">Edit Consommation</button>
+    </div>
+    </form>   
+        
+
+        
+
+      
+    </div>
+  </div>
+

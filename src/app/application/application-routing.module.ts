@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterPageComponent } from '../_shared/static-page/master-page/master-page.component';
+import { AuthentificationGuardGuard } from '../_core/guards/authentification-guard.guard';
+import { AfterGuardGuard } from '../_core/guards/after-guard.guard';
+
 
 const routes: Routes = [
   {
@@ -9,13 +12,16 @@ const routes: Routes = [
     children:[
       {
         path:"admin",
-        loadChildren:() => import('./admin/admin.module').then(m=>m.AdminModule)
+        loadChildren:() => import('./admin/admin.module').then(m=>m.AdminModule),
+        canActivate:[AuthentificationGuardGuard]
       }
     ]
   },
   {
     path:"login",
-    loadChildren:()=>import("./login/login.module").then(m=>m.LoginModule)
+    loadChildren:()=>import("./login/login.module").then(m=>m.LoginModule),
+    canActivate:[AfterGuardGuard]
+    
   }
 ];
 

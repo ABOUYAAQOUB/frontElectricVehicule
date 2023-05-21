@@ -5,6 +5,7 @@ import { NavBarComponent } from './static-page/nav-bar/nav-bar.component';
 import { SideBarComponent } from './static-page/side-bar/side-bar.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule
   ]
 
 })
