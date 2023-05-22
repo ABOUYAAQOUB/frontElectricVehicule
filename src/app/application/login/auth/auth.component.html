@@ -17,14 +17,14 @@
               <div class="card-body">
 
                 <div class="pt-4 pb-2">
-                  <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                  <p class="text-center small">Enter your username & password to login</p>
+                  <h5 class="card-title text-center pb-0 fs-4">Connectez à votre compte</h5>
+                  <p class="text-center small">Entrez votre nom d'utilisateur et passe</p>
                 </div>
 
                 <form class="row g-3 needs-validation"   [formGroup]="loginFormGroup" (ngSubmit)="handlelogin()">
 
                   <div class="col-12">
-                    <label for="nom" class="form-label">Username</label>
+                    <label for="nom" class="form-label">Nom d'utilisateur</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend">@</span>
                       <input type="text" name="nom" formControlName="nom" class="form-control" id="nom" required>
@@ -33,7 +33,7 @@
                   </div>
 
                   <div class="col-12">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Mot de passe</label>
                     <input type="password" name="password" formControlName="password" class="form-control" id="yourPassword" required>
                     <div class="invalid-feedback">Please enter your password!</div>
                   </div>
@@ -41,7 +41,7 @@
                   <div class="col-12">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                      <label class="form-check-label" for="rememberMe">Souviens-toi de moi</label>
                     </div>
                   </div>
                   <div class="col-12">
